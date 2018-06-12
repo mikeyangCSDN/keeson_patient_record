@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}智能床页面{% endblock %}
+
+{% block content %}
+	<h1 style="text-align: center">智能床页面</h1>
+    {% if bedSet %}
+        <table>
+        {% for item in bedSet %}
+            <div class="post-single col-md-1">
+                <a href="{% url 'bedDetail' item.1 %}"><img class="img-responsive" src="/static/keeson/img/bedicon.jpg"/><p class="text-center">{{ item.0 }}</p></a>
+            </div>
+        {% endfor %}
+        </table>
+    {% endif %}
+{% endblock %}

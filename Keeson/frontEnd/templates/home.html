@@ -1,0 +1,16 @@
+<!-- templates/home.html-->
+{% extends 'auth_base.html' %}
+{% block title %}Keeson Data{% endblock %}
+{% block content %}
+    <div class="alert alert-danger">
+          <strong>注意：请用嘉兴第一医院，荣华养老院和月子中心对应管理员账号进行登录操作</strong>
+    </div>
+	{% if user.is_authenticated %}
+	  Hi {{ user.username }}!
+	  <p><a href="{% url 'logout' %}">登出</a></p>
+	{% else %}
+	  <p>请登录</p>
+	  <a href="{% url 'login' %}">登入</a>
+	{% endif %}
+
+{% endblock %}

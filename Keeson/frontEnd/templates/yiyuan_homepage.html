@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}嘉兴第一医院数据录入主页{% endblock %}
+
+{% block content %}
+	<h1 style="text-align: center">嘉兴第一医院数据录入主页</h1>
+    {% if bed_exist %}
+        <div class="alert alert-danger">
+              <strong>您所添加病床号已经经存在，请检查后再添加</strong>
+        </div>
+    {% endif %}
+    <form action="" method="post">
+	    {% csrf_token %}
+	    <table>
+            {{form.as_table}}
+	    </table>
+	    <input type="submit" value="添加新病床" />
+	</form>
+
+    <h3 style="text-align: center">已有病床</h3>
+    {% for bed in bed_set %}
+        <div class="post-single col-md-1">
+            <a href="{% url 'bedAddDetails' bed.bed_ID %}"><img class="img-responsive" src="/static/keeson/img/bedicon.jpg"/><p class="text-center">{{ bed.bed_ID }}床</p></a>
+        </div>
+    {% endfor %}
+
+{% endblock %}

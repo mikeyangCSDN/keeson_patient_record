@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}智能床详细页面{% endblock %}
+
+{% block content %}
+	<h1 style="text-align: center">智能床详细页面</h1>
+    {% if bedInfo %}
+        <table>
+        {% for item in bedInfo %}
+            <p>{{ item }}</p>
+        {% endfor %}
+        </table>
+    {% endif %}
+<div class="container-fluid ">
+    <object class=" jumbotron left-block" style="border:1px; border-color: black " type="text/x-scriptlet" data="/frontEnd/display_daily_info" width=60% height=470></object>
+</div>
+
+{% endblock %}

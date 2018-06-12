@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}嘉兴第一医院智能床页面{% endblock %}
+
+{% block content %}
+	<h1 style="text-align: center">嘉兴第一医院智能床页面</h1>
+    {% if bedSet %}
+        <table>
+        {% for bed in bedSet %}
+            <div class="post-single col-md-2">
+                <a href="{% url 'yiyuanBedDetail' bed.bed_ID %}"><img class="img-responsive" src="/static/keeson/img/bedicon.jpg"/><p class="text-center">{{ bed.bed_ID }}床</p></a>
+            </div>
+        {% endfor %}
+        </table>
+    {% endif %}
+{% endblock %}

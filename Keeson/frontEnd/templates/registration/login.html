@@ -1,0 +1,19 @@
+<!-- templates/registration/login.html -->
+{% extends 'auth_base.html' %}
+{% block title %}登陆主页{% endblock %}
+{% block content %}
+    <div class="alert alert-danger">
+          <strong>注意：请用嘉兴第一医院，荣华养老院和月子中心对应管理员账号进行登录操作</strong>
+    </div>
+	<h2>登陆</h2>
+	<form method="post">
+	  {% csrf_token %}
+	  {{ form.as_p }}
+	  <button type="submit">Login</button>
+{#	  <p>#}
+{#	    <a href="{% url 'signup' %}">sign up</a>#}
+	    {# Assumes you setup the password_reset view in your URLconf #}
+{#	    <a href="{% url 'password_reset' %}"> Lost password?</a>#}
+{#	  </p>#}
+	</form>
+{% endblock %}

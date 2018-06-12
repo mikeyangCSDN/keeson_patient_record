@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}智能床详细页面{% endblock %}
+
+{% block content %}
+	<h1 style="text-align: center">智能床详细页面</h1>
+    {% if bedInfo %}
+        <table>
+        {% for item in bedInfo %}
+            <p>{{ item }}</p>
+        {% endfor %}
+        </table>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}荣华养老院智能床数据录入{% endblock %}
+
+{% block content %}
+	<h1 style="text-align: center">荣华养老院当前床号：{{ bed_id }}</h1>
+    </br></br>
+    <p><a href="{% url 'addPersonRonghua' bed_id %}" role="button" class="btn btn-primary btn-lg btn-block">添加养老院老人基本信息</a></p>
+    </br>
+    <p><a href="{% url 'addDrugHistoryRonghua' bed_id %}" role="button" class="btn btn-primary btn-lg btn-block">添加用药记录</a></p>
+    </br>
+    <p><a href="{% url 'addNurHistoryRonghua' bed_id %}" role="button" class="btn btn-primary btn-lg btn-block">添加护理记录</a></p>
+    </br>
+    <p><a href="{% url 'addTempRonghua' bed_id %}" role="button" class="btn btn-primary btn-lg btn-block">添加体温表</a></p>
+    </br>
+    <p><a href="{% url 'addBabyRonghua' bed_id %}" role="button" class="btn btn-primary btn-lg btn-block">添加婴儿表</a></p>
+{% endblock %}
